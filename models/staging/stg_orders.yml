@@ -1,0 +1,11 @@
+# le fichier stg_xxx.yml sert à documenter les colonnes de la table que nous créons
+
+version: 2
+
+models:
+    - name: stg_orders
+      columns:
+        - name: orders_id
+        - name: orders_customer
+        - name: orders_ordered_at
+        - name: orders_store_id
