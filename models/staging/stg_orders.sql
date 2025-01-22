@@ -4,9 +4,9 @@ with source as (
     select * from {{ source('my_dbt_db', 'raw_orders') }}  /* (le nom de la database, le nom de la table) */
 ),
 renamed as (
-    select
+    select  /* toujours penser à la clé primaire */
         id as orders_id,  /* changement nom des colonnes ==> vérifier sur table raw le nom des colonnes à renommer */
-        customer as customer_id,  /* toujours penser à la clé primaire */
+        customer as customer_id,  /* old as new */
         ordered_at as orders_ordered_at,
         store_id as orders_store_id
     from source
